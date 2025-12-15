@@ -112,7 +112,7 @@ See the detailed "Testing the Integration Flow" section below for step-by-step i
 
 ## B. Project Overview
 
-The POC simulates this integration with an admin panel that lets you create contacts, create deals, and view the relationships between them - demonstrating the mechanics that would be built into Breezy's actual e-commerce/subscription platform. This proof-of-concept demonstrates how Breezy's smart thermostat platform integrates with HubSpot.
+The POC simulates this integration with an admin panel that lets you create contacts, create deals, and view the relationships between them, demonstrating the mechanics that would be built into Breezy's actual e-commerce/subscription platform. This proof-of-concept demonstrates how Breezy's smart thermostat platform integrates with HubSpot.
 
 **Core Integration Capabilities:**
 - **Customer Data Sync**: Automatically sync thermostat purchases as HubSpot Contacts
@@ -640,7 +640,6 @@ breezy-hubspot-integration/
 - **Comprehensive Testing**: All 11 core correctness properties validated
 
 ### Optional Features
-- ⚠️ **AI Integration**: Not implemented (marked as optional in requirements)
 
 ## Troubleshooting
 
