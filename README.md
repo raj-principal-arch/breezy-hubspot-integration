@@ -112,9 +112,7 @@ See the detailed "Testing the Integration Flow" section below for step-by-step i
 
 ## B. Project Overview
 
-### • Brief explanation of what your POC demonstrates
-
-This proof-of-concept demonstrates how Breezy's smart thermostat platform integrates with HubSpot CRM to:
+The POC simulates this integration with an admin panel that lets you create contacts, create deals, and view the relationships between them - demonstrating the mechanics that would be built into Breezy's actual e-commerce/subscription platform. This proof-of-concept demonstrates how Breezy's smart thermostat platform integrates with HubSpot.
 
 **Core Integration Capabilities:**
 - **Customer Data Sync**: Automatically sync thermostat purchases as HubSpot Contacts
@@ -513,36 +511,7 @@ After testing, verify the data was synced correctly:
 
 ## Demo Instructions
 
-### Quick Demo Flow (5 minutes)
 
-This is a suggested flow for demonstrating the application:
-
-1. **Introduction** (30 seconds)
-   - "This is the Breezy HubSpot Integration Admin Panel"
-   - "It demonstrates how Breezy syncs customer data to HubSpot CRM"
-
-2. **Show Existing Data** (1 minute)
-   - Click "Load Contacts" to show existing customers
-   - Click "View Deals" on a contact to show their subscriptions
-   - Explain: "Each contact represents a thermostat purchase, deals represent subscription conversions"
-
-3. **Create New Customer** (2 minutes)
-   - Fill out the Create Contact form
-   - Explain: "This simulates when someone buys a Breezy thermostat for $299"
-   - Submit and show the success message
-   - Point out how the table automatically refreshes
-
-4. **Create Subscription Deal** (1.5 minutes)
-   - Select the newly created contact from dropdown
-   - Fill in deal details (e.g., "Breezy Premium - Annual", amount: 99)
-   - Explain: "This tracks when a free trial user converts to paid subscription"
-   - Submit and show success message
-   - Point out that dealstage is automatically set to "closedwon"
-
-5. **Verify Integration** (30 seconds)
-   - Click "View Deals" on the new contact
-   - Show the deal in the modal
-   - Optionally: Open HubSpot and show the data synced there
 
 ### Key Points to Highlight
 
