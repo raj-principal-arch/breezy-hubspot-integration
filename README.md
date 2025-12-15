@@ -1176,23 +1176,18 @@ Use **rules for filtering**, **AI for insights:**
    - Filter deals by stage, amount, or date range
    - Sort tables by any column
 
-3. **Real-time Sync**
-   - WebSocket connection for live updates
-   - Show when other admins make changes
-   - Auto-refresh data periodically
-
-4. **Enhanced AI Features**
+3. **Enhanced AI Features**
    - Churn prediction scoring
    - Automated email generation
    - Sentiment analysis from support tickets
    - Batch insights for all customers
 
-5. **Data Visualization**
+4. **Data Visualization**
    - Dashboard with charts (conversion funnel, MRR trend)
    - Customer segmentation pie charts
    - Deal pipeline visualization
 
-6. **Audit Trail**
+5. **Audit Trail**
    - Log all API calls and changes
    - Show who created/modified each record
    - Undo functionality
