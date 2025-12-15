@@ -2,6 +2,8 @@
 
 This is a full-stack web application for the HubSpot Solutions Architect Technical Assessment. It demonstrates how Breezy (a smart home technology company) would integrate their smart thermostat platform with HubSpot CRM to manage customer data and track subscription conversions.
 
+> **Note:** This project was built using the HubSpot-provided starter repository (backend server). All frontend implementation, AI integration, data architecture design, and documentation were developed as part of the technical assessment.
+
 ---
 
 ## A. Setup Instructions
