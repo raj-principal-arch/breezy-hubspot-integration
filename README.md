@@ -1207,23 +1207,11 @@ Use **rules for filtering**, **AI for insights:**
 2. **Immediate Sync**: Assumed contact/deal creation happens immediately when customer purchases/subscribes.
    - **Production**: Might have batch sync, webhooks, or scheduled jobs
 
-3. **No Authentication**: POC has no user authentication or role-based access.
-   - **Production**: Would need OAuth, user roles (admin, sales, support), and permissions
-
-4. **US Market Only**: Assumed US-based customers (phone format, address format).
+3. **US Market Only**: Assumed US-based customers (phone format, address format).
    - **Production**: Would need internationalization for global markets
 
-5. **Simple Subscription Model**: Assumed only two tiers (monthly $9.99, annual $99).
-   - **Production**: Might have multiple tiers, add-ons, enterprise pricing
-
-6. **No Existing CRM Data**: Assumed clean slate integration.
-   - **Production**: Would need data migration strategy for existing customers
-
-7. **HubSpot as Single Source of Truth**: Assumed HubSpot is the primary CRM.
+4. **HubSpot as Single Source of Truth**: Assumed HubSpot is the primary CRM.
    - **Production**: Might need bi-directional sync with other systems
-
-8. **Trial Auto-Starts**: Assumed trial starts immediately upon thermostat purchase.
-   - **Production**: Customer might activate trial later
 
 ### What I'd Improve With More Time
 
