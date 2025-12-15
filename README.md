@@ -956,30 +956,6 @@ erDiagram
     }
 ```
 
-**Key Design Decisions:**
-
-1. **Standard Objects**: Use HubSpot's Contact and Deal objects rather than custom objects for simplicity and better integration support
-
-2. **Custom Properties**: Add Breezy-specific properties like `thermostat_serial_number`, `subscription_type`, `mrr`, and `arr` to track device and subscription data
-
-3. **Deal Pipeline**: Create custom "Breezy Subscription Pipeline" with stages:
-   - Trial Started → Trial Active → Trial Ending Soon → Closed Won/Lost → Active Subscription → Churned
-
-4. **Associations**: Use standard Deal-to-Contact association (type ID: 3) to link subscriptions to customers
-
-5. **Renewal Strategy**: Create new deals for each subscription renewal period to maintain historical revenue tracking
-
-For complete details including:
-- Full ERD with all properties
-- Custom property recommendations
-- Deal pipeline architecture with 8 stages
-- 8 design decisions with detailed rationale
-- Data flow diagrams
-- Scalability considerations
-- Implementation roadmap
-
-**See:** [HUBSPOT_DATA_ARCHITECTURE.md](HUBSPOT_DATA_ARCHITECTURE.md)
-
 ---
 
 ## AI Feature Explanation
