@@ -882,9 +882,6 @@ This project was developed by Raj Pasupathy using Anthropic claude Sonnet 4.5 an
 
 2. **Specification-Driven Development**: Using formal requirements (EARS format) and correctness properties before coding led to clearer implementation and better test coverage. This approach caught potential issues early.
 
-3. **API Proxy Patterns**: Learned the importance of backend proxies for API security - never exposing API keys in frontend code, handling CORS properly, and providing consistent error responses.
-
-4. **AI Integration Best Practices**: Discovered that AI works best when given structured data and clear context. The prompt engineering for customer insights required iteration to get actionable recommendations rather than generic advice.
 
 **Challenges:**
 
@@ -905,12 +902,6 @@ This project was developed by Raj Pasupathy using Anthropic claude Sonnet 4.5 an
 **Where AI Excelled:**
 
 ✅ **Rapid Prototyping**: AI assistants helped generate a working POC in a fraction of the time manual coding would take. The entire frontend, and documentation were created in ~2.5 hours.
-
-✅ **Best Practices**: AI suggested proper error handling patterns, accessibility features (labels, semantic HTML), and security practices (environment variables, input sanitization) that I might have overlooked.
-
-✅ **Documentation Quality**: Generated comprehensive documentation including setup instructions, API examples, troubleshooting guides, and testing checklists that would be tedious to write manually.
-
-✅ **Design Patterns**: Recommended appropriate architecture patterns like the proxy pattern for API security and modular function organization for maintainability.
 
 ✅ **Customer Insights**: The Claude API integration provides genuinely useful recommendations by analyzing customer data patterns and suggesting next actions for sales/success teams.
 
