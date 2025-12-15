@@ -122,7 +122,7 @@ The POC simulates this integration with an admin panel that lets you create cont
 - **Real-time Updates**: Bidirectional data flow between Breezy's platform and HubSpot
   - *APIs*: `GET /api/contacts`, `GET /api/deals`, `GET /api/contacts/:contactId/deals`
 - **AI-Powered Insights**: Analyze customer data to provide actionable recommendations for engagement and retention
-  - *APIs*: Not implemented (future feature)
+  - *APIs*: `POST /api/ai/insights`
 
 **Technical Architecture:**
 - **Backend**: Express.js server that proxies requests to the HubSpot API
@@ -136,11 +136,8 @@ The POC simulates this integration with an admin panel that lets you create cont
 
 Breezy sells smart thermostats ($299) with a SaaS subscription model:
 - Customers purchase hardware and create an account (synced as HubSpot Contacts)
-  - *API*: `POST /api/contacts`
 - Free trial users can upgrade to Breezy Premium ($9.99/month or $99/year)
-  - *API*: `POST /api/deals`
 - Subscription conversions are tracked as HubSpot Deals with "closedwon" stage
-  - *API*: `POST /api/deals` (automatically sets `dealstage: "closedwon"`)
 
 This POC demonstrates the integration mechanics that Breezy's engineering team would build into their actual platform.
 
