@@ -848,7 +848,7 @@ This application was built using a specification-driven development approach wit
 
 ### Which AI tools did you use?
 
-This project was developed by Raj Pasupathy using  (Claude Sonnet 4.5) and ChatGPT as development assistants. Additionally, the application itself integrates **Anthropic's Claude API** to provide AI-powered customer insights.
+This project was developed by Raj Pasupathy using Anthropic claude Sonnet 4.5 and ChatGPT as development assistants. Additionally, the application itself integrates **Anthropic's Claude API** to provide AI-powered customer insights.
 
 ### What tasks did you use AI for?
 
