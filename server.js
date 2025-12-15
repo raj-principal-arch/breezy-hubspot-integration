@@ -110,6 +110,7 @@ app.get('/api/deals', async (req, res) => {
   }
 });
 
+
 // POST endpoint - Create new deal and associate to contact
 app.post('/api/deals', async (req, res) => {
   try {
@@ -145,6 +146,101 @@ app.post('/api/deals', async (req, res) => {
     });
   }
 });
+
+
+// POST endpoint - Generate AI insights for customer data
+// Author - Raj Pasupathy
+app.post('/api/ai/insights', async (req, res) => {
+  try {
+    const { contactData, dealData } = req.body;
+    
+    // Check if Anthropic API key is configured
+    const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+    if (!ANTHROPIC_API_KEY) {
+      return res.status(400).json({
+        error: 'AI feature not configured',
+        details: 'ANTHROPIC_API_KEY not found in environment variables'
+      });
+    }
+
+    // Prepare the prompt for Claude
+    const prompt = `You are a customer success analyst for Breezy, a smart thermostat company. Analyze this customer data and provide actionable insights.
+
+Customer Information:
+- Name: ${contactData.firstname} ${contactData.lastname}
+- Email: ${contactData.email}
+- Phone: ${contactData.phone || 'Not provided'}
+- Address: ${contactData.address || 'Not provided'}
+
+${dealData ? `Subscription Information:
+- Deal: ${dealData.dealname}
+- Amount: $${dealData.amount}
+- Stage: ${dealData.dealstage}` : 'No subscription data yet - customer is in free trial period.'}
+
+Provide a structured analysis using this exact format:
+
+**Customer Engagement Level:**
+[1-2 sentences about engagement]
+
+**Upsell/Retention Recommendations:**
+[1-2 sentences with specific recommendations]
+
+**Next Best Action:**
+[1-2 sentences with clear action items]
+
+Keep it concise, actionable, and use the exact section headers shown above.`;
+
+    // Call Anthropic API
+    const response = await axios.post(
+      'https://api.anthropic.com/v1/messages',
+      {
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 300,
+        messages: [{
+          role: 'user',
+          content: prompt
+        }]
+      },
+      {
+        headers: {
+          'x-api-key': ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    // Extract the insight text from Claude's response
+    const insight = response.data.content[0].text;
+
+    res.json({
+      insight: insight,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('Error generating AI insights:', error.response?.data || error.message);
+    
+    // Handle specific Anthropic API errors
+    const errorType = error.response?.data?.error?.type;
+    let userMessage = 'Failed to generate AI insights';
+    
+    if (errorType === 'overloaded_error') {
+      userMessage = 'Anthropic Claude API servers are experiencing high traffic. Please try again in 30-60 seconds.';
+    } else if (errorType === 'rate_limit_error') {
+      userMessage = 'API rate limit reached. Please wait a moment before trying again.';
+    } else if (errorType === 'authentication_error') {
+      userMessage = 'AI API authentication failed. Please check your API key configuration.';
+    }
+    
+    res.status(error.response?.status || 500).json({
+      error: userMessage,
+      details: error.response?.data?.error?.message || error.message
+    });
+  }
+});
+
+
 
 // GET endpoint - Fetch deals associated with a specific contact
 app.get('/api/contacts/:contactId/deals', async (req, res) => {
