@@ -116,21 +116,31 @@ The POC simulates this integration with an admin panel that lets you create cont
 
 **Core Integration Capabilities:**
 - **Customer Data Sync**: Automatically sync thermostat purchases as HubSpot Contacts
+  - *APIs*: `POST /api/contacts`, `GET /api/contacts`
 - **Subscription Tracking**: Track free trial to paid subscription conversions as HubSpot Deals
+  - *APIs*: `POST /api/deals`, `GET /api/deals`
 - **Real-time Updates**: Bidirectional data flow between Breezy's platform and HubSpot
+  - *APIs*: `GET /api/contacts`, `GET /api/deals`, `GET /api/contacts/:contactId/deals`
 - **AI-Powered Insights**: Analyze customer data to provide actionable recommendations for engagement and retention
+  - *APIs*: Not implemented (future feature)
 
 **Technical Architecture:**
 - **Backend**: Express.js server that proxies requests to the HubSpot API
+  - *APIs*: All endpoints (`/health`, `/api/contacts`, `/api/deals`, `/api/contacts/:contactId/deals`)
 - **Frontend**: Vanilla JavaScript single-page application (SPA) for managing contacts and deals
+  - *APIs*: Consumes all `/api/*` endpoints
 - **Integration**: Simulates syncing thermostat purchases (contacts) and subscription conversions (deals) to HubSpot
+  - *APIs*: `POST /api/contacts`, `POST /api/deals`
 
 **Business Context:**
 
 Breezy sells smart thermostats ($299) with a SaaS subscription model:
 - Customers purchase hardware and create an account (synced as HubSpot Contacts)
+  - *API*: `POST /api/contacts`
 - Free trial users can upgrade to Breezy Premium ($9.99/month or $99/year)
+  - *API*: `POST /api/deals`
 - Subscription conversions are tracked as HubSpot Deals with "closedwon" stage
+  - *API*: `POST /api/deals` (automatically sets `dealstage: "closedwon"`)
 
 This POC demonstrates the integration mechanics that Breezy's engineering team would build into their actual platform.
 
