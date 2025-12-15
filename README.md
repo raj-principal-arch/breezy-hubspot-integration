@@ -853,13 +853,13 @@ This project was developed by Raj Pasupathy using  (Claude Sonnet 4.5) and ChatG
 ### What tasks did you use AI for?
 
 **Development Tasks:**
-1. **Requirements Analysis**: Used AI assistants to transform the assignment brief into formal requirements with acceptance criteria
-2. **System Design**: Generated comprehensive design documents including architecture diagrams, data models, and correctness properties
-3. **Code Generation**: Wrote all frontend (HTML/JavaScript) and backend (Node.js/Express) code
-4. **API Integration**: Implemented HubSpot API integration patterns and error handling
-5. **Testing Strategy**: Developed property-based testing approach and manual test checklists
-6. **Documentation**: Created extensive README documentation, setup instructions, and troubleshooting guides
-7. **Data Architecture**: Designed the HubSpot ERD, custom properties, and deal pipeline architecture
+1. **Requirements Analysis**: Transformed the assignment brief into formal requirements with acceptance criteria, using AI assistants to accelerate the documentation process
+2. **System Design**: Designed comprehensive architecture including diagrams, data models, and correctness properties, with AI helping to structure and document the design
+3. **Code Implementation**: Developed all frontend (HTML/JavaScript) and backend (Node.js/Express) code, leveraging AI to speed up implementation
+4. **API Integration**: Implemented HubSpot API integration patterns and error handling, with AI assisting in code generation
+5. **Testing Strategy**: Developed property-based testing approach and manual test checklists, using AI to help create comprehensive test coverage
+6. **Documentation**: Wrote extensive README documentation, setup instructions, and troubleshooting guides, with AI helping to organize and format content
+7. **Data Architecture**: Designed the HubSpot ERD, custom properties, and deal pipeline architecture, using AI to accelerate diagram creation and documentation
 
 **AI Feature Implementation:**
 - Integrated Anthropic Claude API to analyze customer data and provide actionable insights
