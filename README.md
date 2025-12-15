@@ -817,49 +817,6 @@ To enable more detailed logging:
 
 This application was built using a specification-driven development approach with formal correctness properties.
 
-### Specification Documents
-
-The `docs/specs/breezy-hubspot-frontend/` directory contains comprehensive specification documents:
-
-- **`requirements.md`**: Feature requirements written in EARS (Easy Approach to Requirements Syntax) format with acceptance criteria
-- **`design.md`**: Detailed design document including:
-  - System architecture and component breakdown
-  - Data models and API interfaces
-  - 12 correctness properties for validation
-  - Testing strategy
-  - Error handling approach
-- **`tasks.md`**: Implementation task list with 9 major tasks and 40+ subtasks
-
-### Correctness Properties
-
-The application implements 11 core correctness properties (Property 12 is optional AI feature):
-
-1. **Async operations display loading state** - All async operations show loading indicators
-2. **Failed operations display error messages** - Errors are caught and displayed to users
-3. **Successful mutations display confirmation** - Success messages confirm operations
-4. **Contact data renders with all required columns** - Tables show all contact fields
-5. **Contact creation triggers table refresh** - Tables auto-update after mutations
-6. **Form validation prevents invalid submission** - Client-side validation on all forms
-7. **Contact dropdown includes all contacts** - Dropdowns populate with all available contacts
-8. **Deal creation includes closedwon stage** - Deals automatically set to "closedwon"
-9. **Each contact row has view deals action** - All contacts have "View Deals" button
-10. **Deal data renders with all required fields** - Deal displays show name, amount, stage
-11. **Form fields have labels** - All inputs have associated labels for accessibility
-
-These properties ensure the application behaves correctly across all user interactions.
-
-### Testing Results
-
-See `test-checkpoint-7-results.md` for comprehensive test results including:
-- 7 backend API tests (all passing)
-- Frontend implementation verification
-- Manual testing checklist
-- Requirements coverage analysis
-- Property validation results
-
-**Status**: ✅ All 7 tests passed (100% success rate)
-
----
 
 ## Technical Stack
 
@@ -886,63 +843,6 @@ See `test-checkpoint-7-results.md` for comprehensive test results including:
 
 ---
 
-## Development Notes
-
-### Code Organization
-
-**Backend (`server.js`)**:
-- Express server setup with middleware
-- API route handlers for contacts and deals
-- HubSpot API proxy with error handling
-- Static file serving for frontend
-- Graceful shutdown handling
-
-**Frontend (`public/app.js`)**:
-- Modular function organization
-- Utility functions for UI state management
-- API client functions using Fetch API
-- Event handlers for user interactions
-- DOM manipulation for dynamic content
-
-**Frontend (`public/index.html`)**:
-- Semantic HTML5 structure
-- Three main sections: Contacts, Create Contact, Create Deal
-- Modal for viewing deals
-- Inline CSS for styling (could be extracted to separate file)
-
-### Best Practices Implemented
-
-- ✅ **Separation of Concerns**: Backend handles API, frontend handles UI
-- ✅ **Error Handling**: Comprehensive error handling at all levels
-- ✅ **User Feedback**: Loading states, success messages, error messages
-- ✅ **Form Validation**: Client-side validation before API calls
-- ✅ **Accessibility**: Labels, semantic HTML, keyboard navigation
-- ✅ **Responsive Design**: Mobile-friendly layout
-- ✅ **Code Documentation**: Comments reference requirements and properties
-- ✅ **Security**: API keys in environment variables, input sanitization
-- ✅ **Graceful Degradation**: Errors don't break the application
-
-### Future Enhancements
-
-If this POC were to move to production, consider:
-
-1. **Framework Migration**: React or Vue for better state management
-2. **TypeScript**: Add type safety to catch errors at compile time
-3. **Automated Testing**: Jest/Vitest for unit tests, Cypress for E2E tests
-4. **Property-Based Testing**: Implement PBT for correctness properties
-5. **Build Tools**: Webpack or Vite for bundling and optimization
-6. **CSS Framework**: Tailwind or Bootstrap for consistent styling
-7. **Real-time Sync**: WebSocket for live updates from HubSpot
-8. **Batch Operations**: Bulk contact/deal creation
-9. **Advanced Filtering**: Search and filter contacts/deals
-10. **Pagination**: Handle larger datasets (>50 records)
-11. **Offline Support**: Service worker for offline capability
-12. **Error Tracking**: Sentry or similar for production error monitoring
-13. **Analytics**: Track user interactions and API performance
-14. **AI Integration**: Implement optional AI features for insights
-15. **Authentication**: Add user authentication for multi-user access
-
----
 
 ## AI Usage Documentation
 
