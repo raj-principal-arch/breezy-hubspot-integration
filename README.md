@@ -404,57 +404,6 @@ Follow these steps to test the complete customer journey from thermostat purchas
 2. Click "View Deals" for that contact
 3. **Expected Result**: Modal shows "No subscriptions found for this contact"
 
-### Manual Testing Checklist
-
-Use this checklist to verify all functionality:
-
-- [ ] **Load Contacts**
-  - [ ] Loading indicator appears during fetch
-  - [ ] Table displays all contacts with correct columns
-  - [ ] Error handling works if API fails
-  - [ ] "View Deals" button appears for each contact
-
-- [ ] **Create Contact**
-  - [ ] All form fields have clear labels
-  - [ ] Required field validation works (firstname, lastname, email)
-  - [ ] Email validation works (must be valid email format)
-  - [ ] Loading indicator appears during submission
-  - [ ] Success message displays after creation
-  - [ ] Form clears after successful submission
-  - [ ] Contacts table automatically refreshes
-  - [ ] Contact dropdown updates with new contact
-  - [ ] Error messages display for invalid data
-
-- [ ] **Create Deal**
-  - [ ] Contact dropdown populates with all contacts
-  - [ ] All form fields have clear labels
-  - [ ] Required field validation works
-  - [ ] Loading indicator appears during submission
-  - [ ] Success message displays after creation
-  - [ ] Form clears after successful submission
-  - [ ] Deal stage automatically set to "closedwon"
-  - [ ] Error messages display for failures
-
-- [ ] **View Deals**
-  - [ ] Modal opens when "View Deals" is clicked
-  - [ ] Contact name displays in modal heading
-  - [ ] Loading indicator appears during fetch
-  - [ ] Deals display with all fields (name, amount, stage)
-  - [ ] "No subscriptions found" message for contacts without deals
-  - [ ] Error messages display for failures
-  - [ ] Modal closes with X button
-  - [ ] Modal closes when clicking outside
-
-- [ ] **UI/UX**
-  - [ ] All loading states appear for async operations
-  - [ ] Success messages auto-hide after 5 seconds
-  - [ ] Error messages auto-hide after 5 seconds
-  - [ ] Buttons have hover effects
-  - [ ] Forms have proper spacing and layout
-  - [ ] Tables are readable and well-formatted
-  - [ ] Modal has proper styling
-  - [ ] Responsive design works on mobile devices
-
 ### Testing with cURL (Backend API)
 
 You can also test the backend API directly using cURL:
